@@ -6,7 +6,7 @@
 /*   By: asando <asando@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 13:11:01 by asando            #+#    #+#             */
-/*   Updated: 2026/06/04 14:45:04 by asando           ###   ########.fr       */
+/*   Updated: 2026/06/04 19:18:19 by asando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,13 @@
 class Weapon {
 	private:
 		std::string	_type;
+
 	public:
 		Weapon(std::string type);
 		~Weapon();
+
 		const std::string&	getType() const;
-		void		setType(std::string type);
+		void				setType(std::string type);
 };
 
 #endif
