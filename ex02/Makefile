@@ -6,7 +6,7 @@
 #    By: asando <asando@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/03 20:14:33 by asando            #+#    #+#              #
-#    Updated: 2026/06/07 20:25:49 by asando           ###   ########.fr        #
+#    Updated: 2026/06/07 20:49:36 by asando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC_FILES := main.cpp
 SRCS := $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME := violence
+NAME := pointer
 
 all: $(NAME)
 
