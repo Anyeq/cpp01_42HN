@@ -6,7 +6,42 @@
 #    By: asando <asando@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 22:13:34 by asando            #+#    #+#              #
-#    Updated: 2026/05/31 22:13:36 by asando           ###   ########.fr        #
+#    Updated: 2026/06/07 19:23:38 by asando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+CC := c++
+HEADER := -Wall -Wextra -Wall
+INCLUDE := .
+CPP_STD := cpp++98
+
+SRC_DIR := .
+OBJ_DIR := obj
+SRC_FILES := main.cpp Zombie.cpp zombieHorde.cpp
+SRCS := $(addprefix $(SRC_DIR)/, $(SRC_FILES))
+OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
+
+NAME := zombieHorde
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	@$(CC) $(HEADER) $(OBJS) -o $(NAME)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
+	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
+
+clean:
+	@rm -rf $(OBJ_DIR)
+
+fclean: clean
+	@rm -rf $(NAME)
+
+re:
+	@$(MAKE) fclean
+	@$(MAKE) clean
+
+.PHONY: all clean flcean re
