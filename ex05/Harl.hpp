@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asando <asando@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/07 13:04:33 by asando            #+#    #+#             */
-/*   Updated: 2026/06/07 13:17:06 by asando           ###   ########.fr       */
+/*   Created: 2026/06/07 13:18:16 by asando            #+#    #+#             */
+/*   Updated: 2026/06/07 14:26:56 by asando           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replace.hpp"
-#include <iostream>
+#ifndef HARL_HPP
+# define HARL_HPP
 
-int	main(int argc, char **argv) {
-	if (argc != 4) {
-		std::cerr << "Usage: ./replace <filename> <s1> <s2>" << std::endl;
-	}
+# include <string>
 
-	Replace r(argv[1], argv[2], argv[3]);
-	if (!r.process())
-		return (1);
-	return (0);
-}
+class	Harl {
+	private:
+		void	_debug(void);
+		void	_info(void);
+		void	_warning(void);
+		void	_error(void);
+	public:
+		Harl(void);
+		~Harl(void);
+
+		void	complain(std::string level);
+};
+
+#endif
