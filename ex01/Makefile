@@ -6,14 +6,14 @@
 #    By: asando <asando@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/31 22:13:34 by asando            #+#    #+#              #
-#    Updated: 2026/06/07 19:23:38 by asando           ###   ########.fr        #
+#    Updated: 2026/06/07 20:27:05 by asando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := c++
-HEADER := -Wall -Wextra -Wall
 INCLUDE := .
-CPP_STD := cpp++98
+CPP_STD := c++98
+CFLAGS := -Wall -Wextra -Wall -std=$(CPP_STD)
 
 SRC_DIR := .
 OBJ_DIR := obj
@@ -26,7 +26,7 @@ NAME := zombieHorde
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) $(HEADER) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I$(INCLUDE) -c $< -o $@

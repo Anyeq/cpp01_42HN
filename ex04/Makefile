@@ -5,24 +5,24 @@
 #                                                     +:+ +:+         +:+      #
 #    By: asando <asando@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/06/03 20:14:33 by asando            #+#    #+#              #
-#    Updated: 2026/06/07 20:25:49 by asando           ###   ########.fr        #
+#    Created: 2026/06/07 20:28:26 by asando            #+#    #+#              #
+#    Updated: 2026/06/07 20:48:51 by asando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := c++
-INCLUDE := .
-CPP_STD := c++98 
-CFLAGS := -Wall -Wextra -Werror -std=$(CPP_STD) 
+CC = c++
+CPP_STD = c++98
+INCLUDE = .
+CFLAGS = -Wall -Werror -Wextra -std=$(CPP_STD)
 
 SRC_DIR := .
 OBJ_DIR := obj
 
-SRC_FILES := main.cpp
+SRC_FILES := main.cpp Replace.cpp
 SRCS := $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-NAME := violence
+NAME := replace
 
 all: $(NAME)
 
@@ -45,4 +45,4 @@ re:
 	@$(MAKE) fclean
 	@$(MAKE) all
 
-.PHONY: clean fclean re all
+.PHONY: fclean clean re all
