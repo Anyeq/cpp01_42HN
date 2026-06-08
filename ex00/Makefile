@@ -6,7 +6,7 @@
 #    By: asando <asando@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/26 22:18:26 by asando            #+#    #+#              #
-#    Updated: 2026/06/07 20:27:48 by asando           ###   ########.fr        #
+#    Updated: 2026/06/08 16:30:28 by asando           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_DIR := .
 OBJ_DIR := obj
 
 SRC_FILES := main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
-SRCS := $(addprefix $(SRC_DIR)/, $(SRC_FILE))
+SRCS := $(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJS := $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
 NAME := zombie
